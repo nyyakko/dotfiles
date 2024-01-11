@@ -1,3 +1,4 @@
+local lspconfig = require('lspconfig')
 local keymap = vim.keymap.set
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -32,9 +33,23 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 vim.diagnostic.config({ float = { border = 'single' } })
 
-for _, serverName in ipairs({ 'clangd', 'hls', 'cmake' }) do
+lspconfig.clangd.setup({
+    on_attach    = function(client, bufnr)
+        require('nvim-navbuddy').attach(client, bufnr)
+    end,
+    root_dir     = function(fname)
+        return lspconfig.util.root_pattern('compile_commands.json')(fname) or lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
+    end,
+    cmd          = { 'clangd', '-j=8', '--background-index', '--pch-storage=memory' },
+    filetypes    = { "c", "cpp" },
+    flags        = { debounce_text_changes = 150 },
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    single_file_support = false
+})
 
-    local server = require('lspconfig')[serverName]
+for _, serverName in ipairs({ 'hls', 'cmake' }) do
+
+    local server = lspconfig[serverName]
 
     if (serverName ~= 'cmake') then
         server.setup({
