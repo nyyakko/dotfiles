@@ -6,7 +6,10 @@ cmp.setup({
             vim.fn["vsnip#anonymous"](args.body)
         end,
     },
-    window = {},
+    window = {
+        completion    = { border = 'single', scrollbar = '║' },
+        documentation = { border = 'single', scrollbar = '' },
+    },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -16,28 +19,11 @@ cmp.setup({
         ['<Shift-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm { select = true }
     }),
-    -- mapping = cmp.mapping.preset.insert({
-    --     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    --     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    --     ['<C-Space>'] = cmp.mapping.complete(),
-    --     ['<C-e>'] = cmp.mapping.abort(),
-    --     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    -- }),
+    -- sources = cmp.config.sources({
+    --     { name = 'nvim_lsp_signature_help' }, { name = 'vsnip' }}, {{ name = 'buffer' }
+    -- })
     sources = cmp.config.sources({{ name = 'nvim_lsp' }, { name = 'vsnip' }}, {{ name = 'buffer' }})
 })
-
-cmp.setup {
-    window = {
-        completion = { -- rounded border; thin-style scrollbar
-        border = 'single',
-        scrollbar = '║',
-    },
-    documentation = { -- no border; native-style scrollbar
-        border = 'single',
-        scrollbar = '',
-    },
-  },
-}
 
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({{ name = 'git' }}, {{ name = 'buffer' }})

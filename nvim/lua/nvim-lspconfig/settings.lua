@@ -40,7 +40,7 @@ lspconfig.clangd.setup({
     root_dir     = function(fname)
         return lspconfig.util.root_pattern('compile_commands.json')(fname) or lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
     end,
-    cmd          = { 'clangd', '-j=8', '--background-index', '--pch-storage=memory' },
+    cmd          = { 'clangd', '-j=4', '--background-index' },
     filetypes    = { "c", "cpp" },
     flags        = { debounce_text_changes = 150 },
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
