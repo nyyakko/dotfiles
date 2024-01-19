@@ -35,8 +35,6 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'martinsione/darkplus.nvim'
 
-let g:neovide_unlink_border_highlights = v:true
-
 call plug#end()
 
 lua require('base')
