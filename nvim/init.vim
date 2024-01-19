@@ -27,12 +27,15 @@ Plug 'Shatur/neovim-session-manager'
 Plug 'roman/golden-ratio'
 Plug 'sindrets/winshift.nvim'
 Plug 'tpope/vim-fugitive'
+Plug 'utilyre/barbecue.nvim'
 
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ramojus/mellifluous.nvim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'martinsione/darkplus.nvim'
+
+let g:neovide_unlink_border_highlights = v:true
 
 call plug#end()
 
