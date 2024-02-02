@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('n', '<leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', opts)
         keymap('n', '<leader>df', ':lua vim.diagnostic.open_float()<CR>', opts)
         keymap("n", "<leader>mk", ":Navbuddy<CR>", opts)
+        keymap("n", "<leader>tl", ":lua vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())<CR>")
     end
 })
 
@@ -40,7 +41,7 @@ lspconfig.clangd.setup({
     root_dir     = function(fname)
         return lspconfig.util.root_pattern('compile_commands.json')(fname) or lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
     end,
-    cmd          = { 'clangd', '-j=4', '--malloc-trim', '--background-index' },
+    cmd          = { 'clangd', '-j=4', '--background-index' },
     -- cmd          = { 'clangd-17', '-j=4', '--malloc-trim', '--background-index', '--query-driver=' .. vim.fn.getcwd() .. '/Toolchain/Local/**/*' },
     filetypes    = { "c", "cpp" },
     flags        = { debounce_text_changes = 150 },

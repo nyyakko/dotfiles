@@ -66,3 +66,4 @@ set cursorlineopt=number
 set cursorline
 
 hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
+hi LspInlayHint guifg=#525252
