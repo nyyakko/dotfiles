@@ -41,6 +41,7 @@ lua require('base')
 
 lua require('nvim-alpha/settings')
 lua require('nvim-cmp/settings')
+lua require('nvim-navbuddy/settings')
 lua require('nvim-lspconfig/settings')
 lua require('nvim-winshift/settings')
 lua require('nvim-telescope/settings')
