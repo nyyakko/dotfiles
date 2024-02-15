@@ -46,7 +46,7 @@ end
 lspconfig.clangd.setup({
     on_attach    = on_attach,
     root_dir     = root_dir,
-    cmd          = { 'clangd', '-j = 4', '--background-index' },
+    cmd          = { 'clangd', '-j=4', '--background-index' },
     -- cmd          = { 'clangd-17', '-j=4', '--malloc-trim', '--background-index', '--query-driver=' .. vim.fn.getcwd() .. '/Toolchain/Local/**/*' },
     filetypes    = { "c", "cpp" },
     flags        = { debounce_text_changes = 150 },
