@@ -31,11 +31,7 @@ winshift.setup({
 local keymap = vim.keymap.set
 local opts = { silent = true }
 
--- Swap two windows:
-
 keymap('n', '<C-W>S', ':WinShift swap<CR>', opts)
-
--- move commands directly:
 
 keymap('n', '<C-M>H', ':WinShift left<CR>', opts)
 keymap('n', '<C-M>J', ':WinShift down<CR>', opts)

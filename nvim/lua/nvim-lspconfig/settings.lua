@@ -13,9 +13,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('n', 'K', vim.lsp.buf.hover, opts)
         keymap('n', 'gi', vim.lsp.buf.implementation, opts)
         keymap('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-        -- keymap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
-        -- keymap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
-        -- keymap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
         keymap('n', '<leader>D', vim.lsp.buf.type_definition, opts)
         keymap('n', '<leader>rn', vim.lsp.buf.rename, opts)
         keymap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
@@ -28,40 +25,40 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false, update_in_insert = true })
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' })
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'single' })
-
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+vim.lsp.handlers['textDocument/hover']                 = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp']         = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+vim.lsp.handlers['textDocument/publishDiagnostics']    = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false, update_in_insert = true })
 vim.diagnostic.config({ float = { border = 'single' } })
 
-lspconfig.clangd.setup({
-    on_attach    = function(client, bufnr)
+function on_attach(client, bufnr)
+    if (client.server_capabilities.documentSymbolProvider) then
         require('nvim-navbuddy').attach(client, bufnr)
-    end,
-    root_dir     = function(fname)
-        return lspconfig.util.root_pattern('compile_commands.json')(fname) or lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
-    end,
-    cmd          = { 'clangd', '-j=4', '--background-index' },
+    end
+end
+
+function root_dir(fname)
+    return lspconfig.util.root_pattern('compile_commands.json')(fname)
+                or lspconfig.util.find_git_ancestor(fname)
+                or vim.fn.getcwd()
+end
+
+lspconfig.clangd.setup({
+    on_attach    = on_attach,
+    root_dir     = root_dir,
+    cmd          = { 'clangd', '-j = 4', '--background-index' },
     -- cmd          = { 'clangd-17', '-j=4', '--malloc-trim', '--background-index', '--query-driver=' .. vim.fn.getcwd() .. '/Toolchain/Local/**/*' },
     filetypes    = { "c", "cpp" },
     flags        = { debounce_text_changes = 150 },
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    single_file_support = false
+    single_file_support = true
 })
 
-for _, serverName in ipairs({ 'hls', 'cmake' }) do
-
-    local server = lspconfig[serverName]
-
-    if (serverName ~= 'cmake') then
-        server.setup({
-            on_attach = function(client, bufnr)
-                require('nvim-navbuddy').attach(client, bufnr)
-            end,
-            capabilities = require('cmp_nvim_lsp').default_capabilities(),
-            flags        = { debounce_text_changes = 150 }
-        })
-    else
-        server.setup({ capabilities = require('cmp_nvim_lsp').default_capabilities(), flags = { debounce_text_changes = 150 } })
-    end
+for _, serverName in ipairs({ 'tsserver', 'hls', 'cmake', 'glsl_analyzer' }) do
+    lspconfig[serverName].setup({
+        root_dir     = root_dir,
+        on_attach    = on_attach,
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        flags        = { debounce_text_changes = 150 }
+    })
 end

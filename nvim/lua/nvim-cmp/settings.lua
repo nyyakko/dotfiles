@@ -7,8 +7,16 @@ cmp.setup({
         end,
     },
     window = {
-        completion    = { border = 'single', scrollbar = '║' },
-        documentation = { border = 'single', scrollbar = '' },
+        completion = cmp.config.window.bordered({
+            completion = {
+                border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            }
+        }),
+        documentation = cmp.config.window.bordered({
+            documentation = {
+                border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            }
+        }),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -19,9 +27,6 @@ cmp.setup({
         ['<Shift-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm { select = true }
     }),
-    -- sources = cmp.config.sources({
-    --     { name = 'nvim_lsp_signature_help' }, { name = 'vsnip' }}, {{ name = 'buffer' }
-    -- })
     sources = cmp.config.sources({{ name = 'nvim_lsp' }, { name = 'vsnip' }}, {{ name = 'buffer' }})
 })
 
