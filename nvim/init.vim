@@ -34,6 +34,7 @@ Plug 'ramojus/mellifluous.nvim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'martinsione/darkplus.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 
 call plug#end()
 
@@ -65,6 +66,7 @@ set list
 set lcs+=space:·
 set cursorlineopt=number
 set cursorline
+set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
 
 hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
 hi LspInlayHint guifg=#525252

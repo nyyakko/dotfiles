@@ -48,17 +48,18 @@ lspconfig.clangd.setup({
     root_dir     = root_dir,
     cmd          = { 'clangd', '-j=4', '--background-index' },
     -- cmd          = { 'clangd-17', '-j=4', '--malloc-trim', '--background-index', '--query-driver=' .. vim.fn.getcwd() .. '/Toolchain/Local/**/*' },
-    filetypes    = { "c", "cpp" },
+    filetypes    = { 'c', 'cpp' },
     flags        = { debounce_text_changes = 150 },
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     single_file_support = true
 })
 
-for _, serverName in ipairs({ 'tsserver', 'hls', 'cmake', 'glsl_analyzer' }) do
+for _, serverName in ipairs({ 'tsserver', 'intelephense', 'hls', 'cmake', 'glsl_analyzer' }) do
     lspconfig[serverName].setup({
-        root_dir     = root_dir,
-        on_attach    = on_attach,
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        flags        = { debounce_text_changes = 150 }
+        root_dir            = root_dir,
+        on_attach           = on_attach,
+        capabilities        = require('cmp_nvim_lsp').default_capabilities(),
+        flags               = { debounce_text_changes = 150 },
+        single_file_support = true
     })
 end
