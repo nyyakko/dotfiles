@@ -20,16 +20,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('n', '<leader>dn', ':lua vim.diagnostic.goto_next()<CR>', opts)
         keymap('n', '<leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', opts)
         keymap('n', '<leader>df', ':lua vim.diagnostic.open_float()<CR>', opts)
-        keymap("n", "<leader>mk", ":Navbuddy<CR>", opts)
-        keymap("n", "<leader>tl", ":lua vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())<CR>")
+        keymap('n', '<leader>mk', ':Navbuddy<CR>', opts)
+        keymap('n', '<leader>tl', ':lua vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())<CR>')
     end
 })
 
 require('lspconfig.ui.windows').default_options.border = 'rounded'
-vim.lsp.handlers['textDocument/hover']                 = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
-vim.lsp.handlers['textDocument/signatureHelp']         = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
-vim.lsp.handlers['textDocument/publishDiagnostics']    = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false, update_in_insert = true })
-vim.diagnostic.config({ float = { border = 'single' } })
+
+vim.diagnostic.config({
+    signs = { text = {
+        [vim.diagnostic.severity.ERROR] = '',
+        [vim.diagnostic.severity.WARN]  = '',
+        [vim.diagnostic.severity.INFO]  = '',
+        [vim.diagnostic.severity.HINT]  = '',
+    } },
+    float = { border = 'rounded' }
+})
+
+vim.lsp.handlers['textDocument/hover']              = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp']      = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false, update_in_insert = true })
 
 function on_attach(client, bufnr)
     if (client.server_capabilities.documentSymbolProvider) then
@@ -54,7 +64,7 @@ lspconfig.clangd.setup({
     single_file_support = true
 })
 
-for _, serverName in ipairs({ 'tsserver', 'intelephense', 'hls', 'cmake', 'glsl_analyzer' }) do
+for _, serverName in ipairs({ 'csharp_ls', 'tsserver', 'intelephense', 'hls', 'cmake', 'glsl_analyzer' }) do
     lspconfig[serverName].setup({
         root_dir            = root_dir,
         on_attach           = on_attach,

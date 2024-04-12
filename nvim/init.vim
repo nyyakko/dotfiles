@@ -13,27 +13,22 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'akinsho/toggleterm.nvim', { 'tag' : '*'}
+Plug 'akinsho/toggleterm.nvim', { 'tag' : '*' }
 Plug 'SmiteshP/nvim-navic'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'SmiteshP/nvim-navbuddy'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
-Plug 'neoclide/coc.nvim', { 'branch': 'release'}
-Plug 'sindrets/diffview.nvim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'goolord/alpha-nvim'
 Plug 'Shatur/neovim-session-manager'
 Plug 'roman/golden-ratio'
 Plug 'sindrets/winshift.nvim'
-Plug 'tpope/vim-fugitive'
 Plug 'utilyre/barbecue.nvim'
+Plug 'LukasPietzschmann/telescope-tabs'
 
 Plug 'dasupradyumna/midnight.nvim'
-Plug 'ramojus/mellifluous.nvim'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'Mofiqul/vscode.nvim'
-Plug 'martinsione/darkplus.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 
 call plug#end()

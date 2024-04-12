@@ -8,20 +8,20 @@ require('toggleterm').setup({
     start_in_insert = true,
     insert_mappings = true,
     persist_size = true,
-    direction = "float",
+    direction = 'float',
     close_on_exit = true,
     shell = 'pwsh',
     highlights = {
         FloatBorder = {
-          guifg = "#393939"
+          guifg = '#393939'
         },
     },
     float_opts = {
-        border = "curved",
+        border = 'curved',
         winblend = 0,
         highlights = {
-            border = "Normal",
-            background = "Normal",
+            border = 'Normal',
+            background = 'Normal',
         },
     },
 })
