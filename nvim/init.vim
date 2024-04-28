@@ -28,6 +28,7 @@ Plug 'sindrets/winshift.nvim'
 Plug 'utilyre/barbecue.nvim'
 Plug 'LukasPietzschmann/telescope-tabs'
 
+Plug 'scottmckendry/cyberdream.nvim'
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 
