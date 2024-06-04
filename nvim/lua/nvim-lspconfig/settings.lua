@@ -16,12 +16,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('n', '<leader>D', vim.lsp.buf.type_definition, opts)
         keymap('n', '<leader>rn', vim.lsp.buf.rename, opts)
         keymap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-        keymap('n', '<leader>F', function() vim.lsp.buf.format { async = true } end, opts)
         keymap('n', '<leader>dn', ':lua vim.diagnostic.goto_next()<CR>', opts)
         keymap('n', '<leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', opts)
         keymap('n', '<leader>df', ':lua vim.diagnostic.open_float()<CR>', opts)
         keymap('n', '<leader>mk', ':Navbuddy<CR>', opts)
-        keymap('n', '<leader>tl', ':lua vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())<CR>')
+        keymap('n', '<leader>tl', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>')
     end
 })
 

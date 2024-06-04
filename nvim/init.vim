@@ -17,17 +17,17 @@ Plug 'akinsho/toggleterm.nvim', { 'tag' : '*' }
 Plug 'SmiteshP/nvim-navic'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'SmiteshP/nvim-navbuddy'
-Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'goolord/alpha-nvim'
 Plug 'Shatur/neovim-session-manager'
 Plug 'roman/golden-ratio'
-Plug 'sindrets/winshift.nvim'
 Plug 'utilyre/barbecue.nvim'
 Plug 'LukasPietzschmann/telescope-tabs'
+Plug 'echasnovski/mini.statusline'
 
+Plug 'Mofiqul/vscode.nvim'
 Plug 'scottmckendry/cyberdream.nvim'
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
@@ -36,18 +36,20 @@ call plug#end()
 
 lua require('base')
 
+lua require('nvim-ministatus/settings')
+lua require('nvim-themes/settings')
 lua require('nvim-alpha/settings')
 lua require('nvim-cmp/settings')
 lua require('nvim-navbuddy/settings')
 lua require('nvim-lspconfig/settings')
-lua require('nvim-winshift/settings')
 lua require('nvim-telescope/settings')
 lua require('nvim-toggleterm/settings')
 lua require('nvim-treesitter/settings')
-lua require('nvim-lualine/settings')
 lua require('nvim-session-manager/settings')
 
 colorscheme midnight
+"colorscheme vscode
+"colorscheme cyberdream
 
 set nowrap
 set cmdheight=0
@@ -62,7 +64,6 @@ set list
 set lcs+=space:·
 set cursorlineopt=number
 set cursorline
-set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
 
 hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
 hi LspInlayHint guifg=#525252

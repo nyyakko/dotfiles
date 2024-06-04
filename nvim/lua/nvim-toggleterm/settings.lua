@@ -10,7 +10,7 @@ require('toggleterm').setup({
     persist_size = true,
     direction = 'float',
     close_on_exit = true,
-    shell = 'pwsh',
+    shell = vim.o.shell,
     highlights = {
         FloatBorder = {
           guifg = '#393939'
