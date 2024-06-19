@@ -26,6 +26,9 @@ Plug 'roman/golden-ratio'
 Plug 'utilyre/barbecue.nvim'
 Plug 'LukasPietzschmann/telescope-tabs'
 Plug 'echasnovski/mini.statusline'
+Plug 'williamboman/mason.nvim'
+Plug 'zaldih/themery.nvim'
+Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0'}
 
 Plug 'Mofiqul/vscode.nvim'
 Plug 'scottmckendry/cyberdream.nvim'
@@ -35,21 +38,19 @@ Plug 'ellisonleao/gruvbox.nvim'
 call plug#end()
 
 lua require('base')
+lua require('themes/themes')
 
-lua require('nvim-ministatus/settings')
-lua require('nvim-themes/settings')
-lua require('nvim-alpha/settings')
-lua require('nvim-cmp/settings')
-lua require('nvim-navbuddy/settings')
-lua require('nvim-lspconfig/settings')
-lua require('nvim-telescope/settings')
-lua require('nvim-toggleterm/settings')
-lua require('nvim-treesitter/settings')
-lua require('nvim-session-manager/settings')
-
-colorscheme midnight
-"colorscheme vscode
-"colorscheme cyberdream
+lua require('plugins/mason/settings')
+lua require('plugins/ministatus/settings')
+lua require('plugins/alpha/settings')
+lua require('plugins/cmp/settings')
+lua require('plugins/navbuddy/settings')
+lua require('plugins/lspconfig/settings')
+lua require('plugins/telescope/settings')
+lua require('plugins/toggleterm/settings')
+lua require('plugins/treesitter/settings')
+lua require('plugins/session-manager/settings')
+lua require('plugins/barbecue/settings')
 
 set nowrap
 set cmdheight=0
@@ -65,5 +66,5 @@ set lcs+=space:·
 set cursorlineopt=number
 set cursorline
 
-hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
+"hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
 hi LspInlayHint guifg=#525252
