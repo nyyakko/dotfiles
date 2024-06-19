@@ -9,6 +9,13 @@ require('themery').setup({
             ]]
         },
         {
+            name = "Ayu (Dark)",
+            colorscheme = "ayu",
+            before = [[
+                vim.opt.background = "dark"
+            ]]
+        },
+        {
             name = "Cyberdream (Dark)",
             colorscheme = "cyberdream",
             before = [[
@@ -18,6 +25,27 @@ require('themery').setup({
                         variant = 'dark'
                     }
                 })
+            ]]
+        },
+        {
+            name = "VSCode (Dark)",
+            colorscheme = "vscode",
+            before = [[
+                vim.opt.background = "dark"
+            ]]
+        },
+        {
+            name = "Gruvbox (Dark)",
+            colorscheme = "gruvbox",
+            before = [[
+                vim.opt.background = "dark"
+            ]]
+        },
+        {
+            name = "Ayu (Light)",
+            colorscheme = "ayu",
+            before = [[
+                vim.opt.background = "light"
             ]]
         },
         {
@@ -33,24 +61,10 @@ require('themery').setup({
             ]]
         },
         {
-            name = "VSCode (Dark)",
-            colorscheme = "vscode",
-            before = [[
-                vim.opt.background = "dark"
-            ]]
-        },
-        {
             name = "VSCode (Light)",
             colorscheme = "vscode",
             before = [[
                 vim.opt.background = "light"
-            ]]
-        },
-        {
-            name = "Gruvbox (Dark)",
-            colorscheme = "gruvbox",
-            before = [[
-                vim.opt.background = "dark"
             ]]
         },
         {
@@ -68,6 +82,6 @@ require('themery').setup({
 vim.opt.background = "dark"
 
 
-vim.cmd("colorscheme gruvbox")
-vim.g.theme_id = 6
+vim.cmd("colorscheme ayu")
+vim.g.theme_id = 2
 -- end themery block

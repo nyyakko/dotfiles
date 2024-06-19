@@ -30,6 +30,7 @@ Plug 'williamboman/mason.nvim'
 Plug 'zaldih/themery.nvim'
 Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0'}
 
+Plug 'Shatur/neovim-ayu'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'scottmckendry/cyberdream.nvim'
 Plug 'dasupradyumna/midnight.nvim'

@@ -26,7 +26,7 @@ function servers.configure(lspconfig)
     quicklintjs.configure(lspconfig)
 
     local available = {
-        'pylsp', 'html', 'cssls', 'tsserver', 'hls', 'cmake'
+        'pylsp', 'jsonls', 'html', 'cssls', 'tsserver', 'hls', 'cmake'
     }
 
     for _, serverName in ipairs(available) do
