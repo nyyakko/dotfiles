@@ -9,6 +9,26 @@ require('themery').setup({
             ]]
         },
         {
+            name = "Onedark",
+            colorscheme = "onedark",
+            before = [[
+                require('onedark').setup({
+                    style = 'dark'
+                })
+                require('onedark').load()
+            ]]
+        },
+        {
+            name = "Onedark (Darker)",
+            colorscheme = "onedark",
+            before = [[
+                require('onedark').setup({
+                    style = 'darker'
+                })
+                require('onedark').load()
+            ]]
+        },
+        {
             name = "Ayu (Dark)",
             colorscheme = "ayu",
             before = [[
@@ -39,6 +59,13 @@ require('themery').setup({
             colorscheme = "gruvbox",
             before = [[
                 vim.opt.background = "dark"
+            ]]
+        },
+        {
+            name = "Onedark (Light)",
+            colorscheme = "onelight",
+            before = [[
+                vim.opt.background = "light"
             ]]
         },
         {
@@ -79,9 +106,12 @@ require('themery').setup({
 
 -- Themery block
 -- This block will be replaced by Themery.
-vim.opt.background = "dark"
+require('onedark').setup({
+style = 'darker'
+})
+require('onedark').load()
 
 
-vim.cmd("colorscheme ayu")
-vim.g.theme_id = 2
+vim.cmd("colorscheme onedark")
+vim.g.theme_id = 3
 -- end themery block

@@ -19,6 +19,13 @@ vim.diagnostic.config({
     }
 })
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
 servers = {}
 
 function servers.configure(lspconfig)
@@ -26,7 +33,7 @@ function servers.configure(lspconfig)
     quicklintjs.configure(lspconfig)
 
     local available = {
-        'pylsp', 'jsonls', 'html', 'cssls', 'tsserver', 'hls', 'cmake'
+        'pylsp', 'jdtls', 'jsonls', 'html', 'cssls', 'tsserver', 'hls', 'cmake'
     }
 
     for _, serverName in ipairs(available) do
@@ -39,8 +46,8 @@ function servers.configure(lspconfig)
                     require('nvim-navbuddy').attach(client, bufnr)
                 end
             end,
-            capabilities        = require('cmp_nvim_lsp').default_capabilities(),
-            flags               = { debounce_text_changes = 150 },
+            capabilities = capabilities,
+            flags = { debounce_text_changes = 150 },
             single_file_support = true
         })
     end

@@ -29,12 +29,15 @@ Plug 'echasnovski/mini.statusline'
 Plug 'williamboman/mason.nvim'
 Plug 'zaldih/themery.nvim'
 Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0'}
+Plug 'kevinhwang91/promise-async'
+Plug 'kevinhwang91/nvim-ufo'
 
 Plug 'Shatur/neovim-ayu'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'scottmckendry/cyberdream.nvim'
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
+Plug 'navarasu/onedark.nvim'
 
 call plug#end()
 
@@ -47,6 +50,7 @@ lua require('plugins/alpha/settings')
 lua require('plugins/cmp/settings')
 lua require('plugins/navbuddy/settings')
 lua require('plugins/lspconfig/settings')
+lua require('plugins/ufo/settings')
 lua require('plugins/telescope/settings')
 lua require('plugins/toggleterm/settings')
 lua require('plugins/treesitter/settings')
