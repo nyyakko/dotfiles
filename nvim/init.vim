@@ -32,8 +32,8 @@ Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': 
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
 
+Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
-Plug 'Mofiqul/vscode.nvim'
 Plug 'scottmckendry/cyberdream.nvim'
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'

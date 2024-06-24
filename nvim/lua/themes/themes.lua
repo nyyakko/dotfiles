@@ -9,6 +9,12 @@ require('themery').setup({
             ]]
         },
         {
+            name = "Gruber Darker",
+            colorscheme = "gruber-darker",
+            before = [[
+            ]]
+        },
+        {
             name = "Onedark",
             colorscheme = "onedark",
             before = [[
@@ -48,24 +54,10 @@ require('themery').setup({
             ]]
         },
         {
-            name = "VSCode (Dark)",
-            colorscheme = "vscode",
-            before = [[
-                vim.opt.background = "dark"
-            ]]
-        },
-        {
             name = "Gruvbox (Dark)",
             colorscheme = "gruvbox",
             before = [[
                 vim.opt.background = "dark"
-            ]]
-        },
-        {
-            name = "Onedark (Light)",
-            colorscheme = "onelight",
-            before = [[
-                vim.opt.background = "light"
             ]]
         },
         {
@@ -106,12 +98,8 @@ require('themery').setup({
 
 -- Themery block
 -- This block will be replaced by Themery.
-require('onedark').setup({
-style = 'darker'
-})
-require('onedark').load()
 
 
-vim.cmd("colorscheme onedark")
-vim.g.theme_id = 3
+vim.cmd("colorscheme gruber-darker")
+vim.g.theme_id = 2
 -- end themery block

@@ -1,4 +1,6 @@
-require('toggleterm').setup({
+local toggleterm = require('toggleterm')
+
+toggleterm.setup({
     size = 10,
     open_mapping = [[<c-\>]],
     hide_numbers = true,
@@ -8,20 +10,11 @@ require('toggleterm').setup({
     start_in_insert = true,
     insert_mappings = true,
     persist_size = true,
-    -- direction = 'float',
     close_on_exit = true,
     shell = vim.o.shell,
     highlights = {
         FloatBorder = {
           guifg = '#393939'
         },
-    },
-    -- float_opts = {
-    --     border = 'curved',
-    --     winblend = 0,
-    --     highlights = {
-    --         border = 'Normal',
-    --         background = 'Normal',
-    --     },
-    -- },
+    }
 })

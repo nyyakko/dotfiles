@@ -1,8 +1,4 @@
-require('plugins/lspconfig/config/servers')
-
-local lspconfig = require('lspconfig')
-
-require('lspconfig.ui.windows').default_options.border = 'rounded'
+require('plugins/lspconfig/servers')
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -27,5 +23,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-servers.configure(lspconfig)
+require('lspconfig.ui.windows').default_options.border = 'rounded'
 
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+
+vim.diagnostic.config({
+    underline = true,
+    virtual_text = false,
+    update_in_insert = true,
+    float = { border = 'rounded' },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN]  = '',
+            [vim.diagnostic.severity.INFO]  = '',
+            [vim.diagnostic.severity.HINT]  = '',
+        }
+    }
+})
+
+SERVERS.configure()
