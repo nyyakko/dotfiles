@@ -12,6 +12,8 @@ require('plugins/lspconfig/servers/html')
 require('plugins/lspconfig/servers/jsonls')
 require('plugins/lspconfig/servers/jdtls')
 require('plugins/lspconfig/servers/pylsp')
+require('plugins/lspconfig/servers/dartls')
+require('plugins/lspconfig/servers/dockerls')
 
 function SERVERS.configure()
     for _, server in ipairs(SERVERS.registered) do

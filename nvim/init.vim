@@ -22,15 +22,17 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'goolord/alpha-nvim'
 Plug 'Shatur/neovim-session-manager'
-Plug 'roman/golden-ratio'
 Plug 'utilyre/barbecue.nvim'
 Plug 'LukasPietzschmann/telescope-tabs'
 Plug 'echasnovski/mini.statusline'
 Plug 'williamboman/mason.nvim'
 Plug 'zaldih/themery.nvim'
-Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0'}
+Plug 'quick-lint/quick-lint-js', { 'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0' }
 Plug 'kevinhwang91/promise-async'
-Plug 'kevinhwang91/nvim-ufo'
+Plug 'kevinhwang91/nvim-ufo', { 'commit': 'aa2e676af592b4e99c105d80d6eafd1afc215d99' }
+Plug 'luukvbaal/statuscol.nvim'
+Plug 'julienvincent/hunk.nvim', { 'tag': 'v1.3.0' }
+Plug 'rafikdraoui/jj-diffconflicts'
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
@@ -42,8 +44,9 @@ Plug 'navarasu/onedark.nvim'
 call plug#end()
 
 lua require('base')
-lua require('themes/themes')
+lua require('themes')
 
+lua require('plugins/statuscol/settings')
 lua require('plugins/mason/settings')
 lua require('plugins/ministatus/settings')
 lua require('plugins/alpha/settings')
@@ -56,6 +59,7 @@ lua require('plugins/toggleterm/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/session-manager/settings')
 lua require('plugins/barbecue/settings')
+lua require('plugins/hunk/settings')
 
 set nowrap
 set cmdheight=0

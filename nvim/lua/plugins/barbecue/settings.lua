@@ -1,1 +1,3 @@
-require('barbecue').setup()
+local barbecue = require('barbecue')
+
+barbecue.setup()

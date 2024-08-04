@@ -1,4 +1,6 @@
-require('mini.statusline').setup({
+local ministatus = require('mini.statusline')
+
+ministatus.setup({
     content = {
         active = nil,
         inactive = nil,

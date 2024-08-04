@@ -1,4 +1,4 @@
-local jdtls = {}
+local dartls = {}
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 capabilities.textDocument.foldingRange = {
@@ -6,9 +6,8 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-function jdtls.configure(lspconfig)
-    lspconfig.jdtls.setup({
-        -- cmd = {'jdtls', '--enable-preview'},
+function dartls.configure(lspconfig)
+    lspconfig.dartls.setup({
         root_dir = function (fname)
             return
                 lspconfig.util.root_pattern('compile_commands.json')(fname) or
@@ -20,10 +19,11 @@ function jdtls.configure(lspconfig)
                 require('nvim-navbuddy').attach(client, bufnr)
             end
         end,
+        cmd = { 'dart', 'language-server', '--protocol=lsp' },
         capabilities = capabilities,
         flags = { debounce_text_changes = 150 },
         single_file_support = true
     })
 end
 
-table.insert(SERVERS.registered, jdtls)
+table.insert(SERVERS.registered, dartls)
