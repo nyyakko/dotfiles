@@ -1,7 +1,7 @@
 local toggleterm = require('toggleterm')
 
 toggleterm.setup({
-    size = 10,
+    size = 25,
     open_mapping = [[<c-\>]],
     hide_numbers = true,
     shade_filetypes = {},

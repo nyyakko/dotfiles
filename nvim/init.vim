@@ -33,6 +33,9 @@ Plug 'kevinhwang91/nvim-ufo', { 'commit': 'aa2e676af592b4e99c105d80d6eafd1afc215
 Plug 'luukvbaal/statuscol.nvim'
 Plug 'julienvincent/hunk.nvim', { 'tag': 'v1.3.0' }
 Plug 'rafikdraoui/jj-diffconflicts'
+Plug 'saecki/live-rename.nvim'
+Plug 'tpope/vim-abolish'
+Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
@@ -46,20 +49,21 @@ call plug#end()
 lua require('base')
 lua require('themes')
 
-lua require('plugins/statuscol/settings')
+lua require('plugins/alpha/settings')
+lua require('plugins/barbecue/settings')
+lua require('plugins/cmp/settings')
+lua require('plugins/hunk/settings')
+lua require('plugins/lspconfig/settings')
 lua require('plugins/mason/settings')
 lua require('plugins/ministatus/settings')
-lua require('plugins/alpha/settings')
-lua require('plugins/cmp/settings')
 lua require('plugins/navbuddy/settings')
-lua require('plugins/lspconfig/settings')
-lua require('plugins/ufo/settings')
+lua require('plugins/session-manager/settings')
+lua require('plugins/statuscol/settings')
 lua require('plugins/telescope/settings')
 lua require('plugins/toggleterm/settings')
+lua require('plugins/tree/settings')
 lua require('plugins/treesitter/settings')
-lua require('plugins/session-manager/settings')
-lua require('plugins/barbecue/settings')
-lua require('plugins/hunk/settings')
+lua require('plugins/ufo/settings')
 
 set nowrap
 set cmdheight=0

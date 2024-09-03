@@ -5,6 +5,9 @@ require('themery').setup({
             colorscheme = "midnight",
             before = [[
                 vim.opt.background = "dark"
+            ]],
+            after = [[
+                vim.cmd("highlight FoldColumn guifg=#b9b9b9 guibg=#080c10")
             ]]
         },
         {

@@ -1,7 +1,6 @@
-local treesitter = require('nvim-treesitter')
-local configs = require('nvim-treesitter.configs')
+local treesitter = require('nvim-treesitter.configs')
 
-configs.setup({
+treesitter.setup({
     ensure_installed = { 'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query' },
     sync_install = false,
     auto_install = true,
