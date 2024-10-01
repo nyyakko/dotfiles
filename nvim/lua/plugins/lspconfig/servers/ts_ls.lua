@@ -1,4 +1,4 @@
-local tsserver = {}
+local ts_ls = {}
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 capabilities.textDocument.foldingRange = {
@@ -6,8 +6,8 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-function tsserver.configure(lspconfig)
-    lspconfig.tsserver.setup({
+function ts_ls.configure(lspconfig)
+    lspconfig.ts_ls.setup({
         root_dir = function (fname)
             return
                 lspconfig.util.root_pattern('compile_commands.json')(fname) or
@@ -25,4 +25,4 @@ function tsserver.configure(lspconfig)
     })
 end
 
-table.insert(SERVERS.registered, tsserver)
+table.insert(SERVERS.registered, ts_ls)

@@ -13,7 +13,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'akinsho/toggleterm.nvim', { 'tag' : '*' }
 Plug 'SmiteshP/nvim-navic'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'SmiteshP/nvim-navbuddy'
@@ -27,7 +26,6 @@ Plug 'LukasPietzschmann/telescope-tabs'
 Plug 'echasnovski/mini.statusline'
 Plug 'williamboman/mason.nvim'
 Plug 'zaldih/themery.nvim'
-Plug 'quick-lint/quick-lint-js', { 'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0' }
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo', { 'commit': 'aa2e676af592b4e99c105d80d6eafd1afc215d99' }
 Plug 'luukvbaal/statuscol.nvim'
@@ -35,7 +33,6 @@ Plug 'julienvincent/hunk.nvim', { 'tag': 'v1.3.0' }
 Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
-Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
@@ -60,8 +57,6 @@ lua require('plugins/navbuddy/settings')
 lua require('plugins/session-manager/settings')
 lua require('plugins/statuscol/settings')
 lua require('plugins/telescope/settings')
-lua require('plugins/toggleterm/settings')
-lua require('plugins/tree/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
 
@@ -75,9 +70,10 @@ set number
 set relativenumber
 set mouse=a
 set list
-set lcs+=space:·
+"set lcs+=space:·
 set cursorlineopt=number
 set cursorline
+set guifont=Iosevka\ Nerd\ Font\ Mono:h11
 
 "hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
 hi LspInlayHint guifg=#525252
