@@ -33,6 +33,7 @@ Plug 'julienvincent/hunk.nvim', { 'tag': 'v1.3.0' }
 Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
@@ -59,6 +60,7 @@ lua require('plugins/statuscol/settings')
 lua require('plugins/telescope/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
+lua require('plugins/ibl/settings')
 
 set nowrap
 set cmdheight=0

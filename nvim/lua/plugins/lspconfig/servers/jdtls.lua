@@ -6,9 +6,17 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
+local lombok = vim.fn.stdpath('config') .. '/lua/plugins/lspconfig/runtime/lombok.jar'
+
 function jdtls.configure(lspconfig)
     lspconfig.jdtls.setup({
-        -- cmd = {'jdtls', '--enable-preview'},
+        cmd = {
+            'jdtls',
+            '-configuration', vim.fn.expand('$HOME/.cache/jdtls/config'),
+            '-data', vim.fn.expand('$HOME/.cache/jdtls/workspace'),
+            '--jvm-arg=-javaagent:' .. lombok,
+            '--jvm-arg=-Xbootclasspath/a:' .. lombok
+        },
         root_dir = function (fname)
             return
                 lspconfig.util.root_pattern('compile_commands.json')(fname) or
