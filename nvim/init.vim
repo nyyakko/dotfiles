@@ -34,6 +34,8 @@ Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'Mofiqul/vscode.nvim'
+Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0'}
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'

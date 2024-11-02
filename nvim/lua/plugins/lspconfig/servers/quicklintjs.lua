@@ -1,7 +1,6 @@
 require('lspconfig/quick_lint_js')
 
-quicklintjs = {}
-
+local quicklintjs = {}
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 capabilities.textDocument.foldingRange = {
@@ -25,3 +24,4 @@ function quicklintjs.configure(lspconfig)
     })
 end
 
+table.insert(SERVERS.registered, quicklintjs)

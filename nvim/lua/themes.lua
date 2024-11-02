@@ -66,6 +66,20 @@ require('themery').setup({
             ]]
         },
         {
+            name = "VSCode Dark Plus (Dark)",
+            colorscheme = "vscode",
+            before = [[
+                vim.opt.background = "dark"
+            ]]
+        },
+        {
+            name = "VSCode Dark Plus (Light)",
+            colorscheme = "vscode",
+            before = [[
+                vim.opt.background = "light"
+            ]]
+        },
+        {
             name = "Ayu (Light)",
             colorscheme = "ayu",
             before = [[

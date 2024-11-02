@@ -2,6 +2,7 @@ SERVERS = {
     registered = {}
 }
 
+require('plugins/lspconfig/servers/quicklintjs')
 require('plugins/lspconfig/servers/texlab')
 require('plugins/lspconfig/servers/clangd')
 require('plugins/lspconfig/servers/cmake')
