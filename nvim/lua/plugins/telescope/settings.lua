@@ -19,5 +19,6 @@ keymap('n', '<leader>fh', ':Telescope oldfiles<CR>', opts)
 keymap('n', '<leader>fk', ':Telescope buffers<CR>', opts)
 keymap('n', '<leader>fg', ':lua require(\'telescope.builtin\').live_grep({search_dirs={vim.fn.expand(\'%:p\')}})<CR>', opts)
 keymap('n', '<leader>fG', ':Telescope live_grep<CR>', opts)
+keymap('n', '<leader>km', ':Telescope keymaps<CR>', opts)
 keymap('n', '<leader>ft', ':lua require(\'telescope-tabs\').list_tabs()<CR>', opts)
 

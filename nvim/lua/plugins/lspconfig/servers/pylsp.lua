@@ -19,6 +19,13 @@ function pylsp.configure(lspconfig)
                 require('nvim-navbuddy').attach(client, bufnr)
             end
         end,
+        settings = {
+            pylsp = {
+                plugins = {
+                    pycodestyle = { enabled = false }
+                }
+            }
+        },
         capabilities = capabilities,
         flags = { debounce_text_changes = 150 },
         single_file_support = true

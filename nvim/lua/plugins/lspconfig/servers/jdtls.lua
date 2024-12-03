@@ -28,6 +28,11 @@ function jdtls.configure(lspconfig)
                 require('nvim-navbuddy').attach(client, bufnr)
             end
         end,
+        init_options = {
+            bundles = {
+                vim.fn.expand("$HOME") .. "/.m2/repository/com/microsoft/java/com.microsoft.java.debug.plugin/0.53.1/com.microsoft.java.debug.plugin-0.53.1.jar"
+            }
+        },
         capabilities = capabilities,
         flags = { debounce_text_changes = 150 },
         single_file_support = true
