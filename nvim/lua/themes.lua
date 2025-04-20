@@ -73,6 +73,20 @@ require('themery').setup({
             ]]
         },
         {
+            name = "e-ink (Dark)",
+            colorscheme = "e-ink",
+            before = [[
+                vim.opt.background = "dark"
+            ]]
+        },
+        {
+            name = "e-ink (Light)",
+            colorscheme = "e-ink",
+            before = [[
+                vim.opt.background = "light"
+            ]]
+        },
+        {
             name = "VSCode Dark Plus (Light)",
             colorscheme = "vscode",
             before = [[

@@ -16,8 +16,6 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'SmiteshP/nvim-navic'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'SmiteshP/nvim-navbuddy'
-Plug 'godlygeek/tabular'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'goolord/alpha-nvim'
 Plug 'Shatur/neovim-session-manager'
@@ -39,6 +37,7 @@ Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': 
 Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-neotest/nvim-nio'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
@@ -46,10 +45,11 @@ Plug 'scottmckendry/cyberdream.nvim'
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'navarasu/onedark.nvim'
+Plug 'alexxGmZ/e-ink.nvim'
 
 call plug#end()
 
-lua require('base')
+lua require('settings')
 lua require('themes')
 
 lua require('plugins/dap/settings')
@@ -67,6 +67,7 @@ lua require('plugins/telescope/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
 lua require('plugins/ibl/settings')
+lua require('plugins/colorizer/settings')
 
 set nowrap
 set cmdheight=0
