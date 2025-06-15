@@ -1,22 +1,43 @@
 require('themery').setup({
     themes = {
         {
+            name = "Kanagawa Wave",
+            colorscheme = "kanagawa-wave",
+            before = [[
+                vim.opt.background = "dark"
+            ]],
+            after = [[
+            ]]
+        },
+        {
+            name = "Kanagawa Dragon",
+            colorscheme = "kanagawa-dragon",
+            before = [[
+                vim.opt.background = "dark"
+            ]],
+            after = [[
+            ]]
+        },
+        {
             name = "Midnight",
             colorscheme = "midnight",
             before = [[
                 vim.opt.background = "dark"
             ]],
             after = [[
-                vim.cmd("highlight FoldColumn guifg=#b9b9b9 guibg=#080c10")
+                vim.cmd("highlight FoldColumn guifg=#b9b9b9 guibg=Normal")
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
             name = "Gruber Darker",
             colorscheme = "gruber-darker",
             before = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]],
             after = [[
-                vim.cmd("highlight FoldColumn guifg=#cc8c3c guibg=#181818")
+                vim.cmd("highlight FoldColumn guifg=#cc8c3c guibg=Normal")
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -27,6 +48,9 @@ require('themery').setup({
                     style = 'dark'
                 })
                 require('onedark').load()
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -37,6 +61,9 @@ require('themery').setup({
                     style = 'darker'
                 })
                 require('onedark').load()
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -44,18 +71,9 @@ require('themery').setup({
             colorscheme = "ayu",
             before = [[
                 vim.opt.background = "dark"
-            ]]
-        },
-        {
-            name = "Cyberdream (Dark)",
-            colorscheme = "cyberdream",
-            before = [[
-                require('cyberdream').setup({
-                    borderless_telescope = false,
-                    theme = {
-                        variant = 'dark'
-                    }
-                })
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -63,6 +81,9 @@ require('themery').setup({
             colorscheme = "gruvbox",
             before = [[
                 vim.opt.background = "dark"
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -70,6 +91,9 @@ require('themery').setup({
             colorscheme = "vscode",
             before = [[
                 vim.opt.background = "dark"
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -77,6 +101,15 @@ require('themery').setup({
             colorscheme = "e-ink",
             before = [[
                 vim.opt.background = "dark"
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
+            ]]
+        },
+        {
+            name = "Kanagawa Lotus",
+            colorscheme = "kanagawa-lotus",
+            after = [[
             ]]
         },
         {
@@ -84,6 +117,9 @@ require('themery').setup({
             colorscheme = "e-ink",
             before = [[
                 vim.opt.background = "light"
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -91,6 +127,9 @@ require('themery').setup({
             colorscheme = "vscode",
             before = [[
                 vim.opt.background = "light"
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -98,18 +137,9 @@ require('themery').setup({
             colorscheme = "ayu",
             before = [[
                 vim.opt.background = "light"
-            ]]
-        },
-        {
-            name = "Cyberdream (Light)",
-            colorscheme = "cyberdream",
-            before = [[
-                require('cyberdream').setup({
-                    borderless_telescope = false,
-                    theme = {
-                        variant = 'light'
-                    }
-                })
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         },
         {
@@ -117,6 +147,9 @@ require('themery').setup({
             colorscheme = "gruvbox",
             before = [[
                 vim.opt.background = "light"
+            ]],
+            after = [[
+                vim.cmd("highlight Folded guibg=Normal")
             ]]
         }
     }

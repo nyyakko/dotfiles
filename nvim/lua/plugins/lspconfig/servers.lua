@@ -15,6 +15,7 @@ require('plugins/lspconfig/servers/jsonls')
 require('plugins/lspconfig/servers/luals')
 require('plugins/lspconfig/servers/pylsp')
 require('plugins/lspconfig/servers/ts_ls')
+require('plugins/lspconfig/servers/glsl_analyzer')
 
 function SERVERS.configure()
     for _, server in ipairs(SERVERS.registered) do

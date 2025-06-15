@@ -38,10 +38,13 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-neotest/nvim-nio'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'kylechui/nvim-surround'
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
-Plug 'scottmckendry/cyberdream.nvim'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'dasupradyumna/midnight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'navarasu/onedark.nvim'
@@ -52,6 +55,7 @@ call plug#end()
 lua require('settings')
 lua require('themes')
 
+lua require('plugins/surround/settings')
 lua require('plugins/dap/settings')
 lua require('plugins/alpha/settings')
 lua require('plugins/barbecue/settings')
@@ -68,6 +72,7 @@ lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
 lua require('plugins/ibl/settings')
 lua require('plugins/colorizer/settings')
+lua require('plugins/render-markdown/settings')
 
 set nowrap
 set cmdheight=0

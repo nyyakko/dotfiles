@@ -1,6 +1,14 @@
 local cpp = {}
 
 function cpp.configure(dap)
+    local masonHome = vim.fn.expand('$MASON')
+
+    dap.adapters.cppdbg = {
+        id = 'cppdbg',
+        type = 'executable',
+        command = masonHome .. '/OpenDebugAD7'
+    }
+
     dap.configurations.cpp = {
         {
             name = 'Launch file',
@@ -16,24 +24,7 @@ function cpp.configure(dap)
             program = function()
                 return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
             end,
-        },
-        {
-            name = 'Attach to gdbserver :1234',
-            type = 'cppdbg',
-            request = 'launch',
-            MIMode = 'gdb',
-            miDebuggerServerAddress = 'localhost:1234',
-            miDebuggerPath = '/usr/bin/gdb',
-            cwd = '${workspaceFolder}',
-            setupCommands = {{
-                text = '-enable-pretty-printing',
-                description =  'enable pretty printing',
-                ignoreFailures = false
-            }},
-            program = function()
-                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-            end,
-        },
+        }
     }
 end
 
