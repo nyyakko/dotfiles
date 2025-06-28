@@ -1,6 +1,14 @@
 require('themery').setup({
     themes = {
         {
+            name = "Artic",
+            colorscheme = "arctic",
+            before = [[
+            ]],
+            after = [[
+            ]]
+        },
+        {
             name = "Kanagawa Wave",
             colorscheme = "kanagawa-wave",
             before = [[

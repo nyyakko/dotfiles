@@ -16,7 +16,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map({ 'n' }, 'K', function () vim.lsp.buf.hover { border='rounded', max_width = 100 } end, opts)
         map({ 'n' }, '<C-k>', function () vim.lsp.buf.signature_help { border='rounded', max_width = 100 } end, opts)
         map({ 'n' }, '<leader>rn', (function (_opts) return function() require("live-rename").rename(_opts) end end)({}), opts)
-        map({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         map({ 'n' }, '<leader>dn', function () vim.diagnostic.jump({ count=1, float=true }) end, opts)
         map({ 'n' }, '<leader>dp', function () vim.diagnostic.jump({ count=-1, float=true }) end, opts)
         map({ 'n' }, '<leader>df', function () vim.diagnostic.open_float() end, opts)
