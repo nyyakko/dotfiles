@@ -1,4 +1,4 @@
-local jdtls = {}
+local svelte = {}
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 capabilities.textDocument.foldingRange = {
@@ -6,17 +6,8 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-local lombok = vim.fn.stdpath('config') .. '/lua/plugins/lspconfig/runtime/lombok.jar'
-
-function jdtls.configure(lspconfig)
-    lspconfig.jdtls.setup({
-        cmd = {
-            'jdtls',
-            '-configuration', vim.fn.expand('$HOME/.cache/jdtls/config'),
-            '-data', vim.fn.expand('$HOME/.cache/jdtls/workspace'),
-            '--jvm-arg=-javaagent:' .. lombok,
-            '--jvm-arg=-Xbootclasspath/a:' .. lombok
-        },
+function svelte.configure(lspconfig)
+    lspconfig.svelte.setup({
         root_dir = function (fname)
             return
                 lspconfig.util.root_pattern('compile_commands.json')(fname) or
@@ -28,15 +19,10 @@ function jdtls.configure(lspconfig)
                 require('nvim-navbuddy').attach(client, bufnr)
             end
         end,
-        init_options = {
-            bundles = {
-                vim.fn.expand('$HOME') .. '/.m2/repository/com/microsoft/java/com.microsoft.java.debug.plugin/0.53.1/com.microsoft.java.debug.plugin-0.53.1.jar'
-            }
-        },
         capabilities = capabilities,
         flags = { debounce_text_changes = 150 },
         single_file_support = true
     })
 end
 
-table.insert(SERVERS.registered, jdtls)
+table.insert(SERVERS.registered, svelte)

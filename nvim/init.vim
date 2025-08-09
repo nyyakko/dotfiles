@@ -1,5 +1,7 @@
 call plug#begin()
 
+" Plugins
+
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
@@ -13,13 +15,12 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'SmiteshP/nvim-navic'
 Plug 'MunifTanjim/nui.nvim'
+Plug 'SmiteshP/nvim-navic'
 Plug 'SmiteshP/nvim-navbuddy'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'goolord/alpha-nvim'
 Plug 'Shatur/neovim-session-manager'
-Plug 'utilyre/barbecue.nvim'
 Plug 'LukasPietzschmann/telescope-tabs'
 Plug 'echasnovski/mini.statusline'
 Plug 'williamboman/mason.nvim'
@@ -32,17 +33,22 @@ Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v3.8.2' }
-Plug 'Mofiqul/vscode.nvim'
-Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0'}
-Plug 'mfussenegger/nvim-dap'
+Plug 'quick-lint/quick-lint-js', { 'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0' }
 Plug 'nvim-neotest/nvim-nio'
-Plug 'rcarriga/nvim-dap-ui'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kylechui/nvim-surround'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'rachartier/tiny-code-action.nvim'
+Plug 'hedyhli/outline.nvim'
+Plug 'jbyuki/nabla.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'utilyre/barbecue.nvim'
+Plug 'onsails/lspkind.nvim'
 
+" Themes
+
+Plug 'Mofiqul/vscode.nvim'
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
 Plug 'rebelot/kanagawa.nvim'
@@ -55,19 +61,33 @@ Plug 'rockyzhang24/arctic.nvim'
 
 call plug#end()
 
-lua require('settings')
+lua << config
+vim.keymap.set('', '<Space>', '<Nop>', { silent=true })
+
+vim.g.mapleader = ' '
+
+-- tab manip
+vim.keymap.set('n', '<C-t>l', ':tabnext<CR>', { silent=true })
+vim.keymap.set('n', '<C-t>h', ':tabprev<CR>', { silent=true })
+vim.keymap.set('n', '<C-t>m', ':tabnew<CR>', { silent=true })
+
+-- panel manip
+vim.keymap.set('n', '<leader>ss', ':split<CR><BAR><C-w>j<CR>', { silent=true })
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR><BAR><C-w>l<CR>',{ silent=true })
+vim.keymap.set('n', '<leader>sq', ':q!<CR>', { silent=true })
+
+config
+
 lua require('themes')
 
 lua require('plugins/surround/settings')
 lua require('plugins/alpha/settings')
-lua require('plugins/barbecue/settings')
 lua require('plugins/cmp/settings')
 lua require('plugins/hunk/settings')
 lua require('plugins/lspconfig/settings')
 lua require('plugins/mason/settings')
 lua require('plugins/ministatus/settings')
 lua require('plugins/navbuddy/settings')
-lua require('plugins/session-manager/settings')
 lua require('plugins/statuscol/settings')
 lua require('plugins/telescope/settings')
 lua require('plugins/treesitter/settings')
@@ -76,10 +96,13 @@ lua require('plugins/ibl/settings')
 lua require('plugins/colorizer/settings')
 lua require('plugins/render-markdown/settings')
 lua require('plugins/tiny-code-action/settings')
+lua require('plugins/outline/settings')
+lua require('plugins/nabla/settings')
+lua require('plugins/session-manager/settings')
+lua require('plugins/barbecue/settings')
 
 set nowrap
 set cmdheight=0
-set termguicolors
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -87,10 +110,6 @@ set number
 set relativenumber
 set mouse=a
 set list
-"set lcs+=space:·
 set cursorlineopt=number
 set cursorline
-set guifont=Iosevka\ Nerd\ Font\ Mono:h11
-
-"hi CursorLineNr cterm=BOLD ctermbg=NONE ctermfg=NONE gui=BOLD guifg=#b9b9b9 guibg=#080c10
-hi LspInlayHint guifg=#525252
+set termguicolors
