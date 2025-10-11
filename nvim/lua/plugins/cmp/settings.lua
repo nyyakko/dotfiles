@@ -2,7 +2,7 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 
 local formatter = function(entry, item)
-    item.menu = ""
+    item.menu = ''
     local fixed_width = 40
     local content = item.abbr
 
@@ -14,9 +14,9 @@ local formatter = function(entry, item)
     local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)
 
     if #content > max_content_width then
-        item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 3) .. "..."
+        item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 3) .. '...'
     else
-        item.abbr = content .. (" "):rep(max_content_width - #content)
+        item.abbr = content .. (' '):rep(max_content_width - #content)
     end
 
     return item
@@ -24,10 +24,10 @@ end
 
 cmp.setup({
     formatting = {
-        fields = { "abbr", "kind" },
+        fields = { 'abbr', 'kind' },
         format = lspkind.cmp_format({
             maxwidth = 40,
-            ellipsis_char = "...",
+            ellipsis_char = '...',
             before = formatter,
         }),
     },

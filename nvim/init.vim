@@ -6,7 +6,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v2.4.0' }
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -48,6 +48,7 @@ Plug 'onsails/lspkind.nvim'
 
 " Themes
 
+Plug 'cpea2506/one_monokai.nvim'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Shatur/neovim-ayu'
@@ -66,40 +67,37 @@ vim.keymap.set('', '<Space>', '<Nop>', { silent=true })
 
 vim.g.mapleader = ' '
 
--- tab manip
 vim.keymap.set('n', '<C-t>l', ':tabnext<CR>', { silent=true })
 vim.keymap.set('n', '<C-t>h', ':tabprev<CR>', { silent=true })
 vim.keymap.set('n', '<C-t>m', ':tabnew<CR>', { silent=true })
 
--- panel manip
 vim.keymap.set('n', '<leader>ss', ':split<CR><BAR><C-w>j<CR>', { silent=true })
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR><BAR><C-w>l<CR>',{ silent=true })
 vim.keymap.set('n', '<leader>sq', ':q!<CR>', { silent=true })
-
 config
 
-lua require('themes')
+lua require('plugins/themery/settings')
 
-lua require('plugins/surround/settings')
 lua require('plugins/alpha/settings')
+lua require('plugins/barbecue/settings')
 lua require('plugins/cmp/settings')
+lua require('plugins/colorizer/settings')
 lua require('plugins/hunk/settings')
+lua require('plugins/ibl/settings')
 lua require('plugins/lspconfig/settings')
 lua require('plugins/mason/settings')
 lua require('plugins/ministatus/settings')
+lua require('plugins/nabla/settings')
 lua require('plugins/navbuddy/settings')
+lua require('plugins/outline/settings')
+lua require('plugins/render-markdown/settings')
+lua require('plugins/session-manager/settings')
 lua require('plugins/statuscol/settings')
+lua require('plugins/surround/settings')
 lua require('plugins/telescope/settings')
+lua require('plugins/tiny-code-action/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
-lua require('plugins/ibl/settings')
-lua require('plugins/colorizer/settings')
-lua require('plugins/render-markdown/settings')
-lua require('plugins/tiny-code-action/settings')
-lua require('plugins/outline/settings')
-lua require('plugins/nabla/settings')
-lua require('plugins/session-manager/settings')
-lua require('plugins/barbecue/settings')
 
 set nowrap
 set cmdheight=0
@@ -112,4 +110,3 @@ set mouse=a
 set list
 set cursorlineopt=number
 set cursorline
-set termguicolors
