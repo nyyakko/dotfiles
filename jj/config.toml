@@ -1,0 +1,15 @@
+[ui]
+editor = "nvim"
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+allow-init-native = true
+default-command = "log"
+
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = ["-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right"]
+merge-tool-edits-conflict-markers = true
+
+[signing]
+behavior = "own"
+backend = "gpg"
+

@@ -23,6 +23,9 @@ font pango:JetBrainsMono Nerd Font 9
 
 # exec --no-startup-id i3
 
+exec --no-startup-id picom
+exec --no-startup-id hsetroot -solid '#000000'
+
 exec --no-startup-id xsetwacomgui --no-gui
 exec --no-startup-id openrgb --profile Red --startminimized
 exec --no-startup-id setxkbmap -layout us -variant intl -option ctrl:nocaps
