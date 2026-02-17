@@ -1,14 +1,12 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
-local formatter = function(entry, item)
+local formatter = function(_, item)
     item.menu = ''
     local fixed_width = 40
     local content = item.abbr
 
-    if fixed_width then
-        vim.o.pumwidth = fixed_width
-    end
+    vim.o.pumwidth = fixed_width
 
     local win_width = vim.api.nvim_win_get_width(0)
     local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)

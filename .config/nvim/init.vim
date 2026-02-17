@@ -5,13 +5,13 @@ call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'neovim/nvim-lspconfig', { 'tag': 'v2.4.0' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'master', 'do': ':TSUpdate' }
+Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/nvim-cmp', { 'tag': 'v0.0.2' }
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -29,7 +29,6 @@ Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo', { 'commit': 'aa2e676af592b4e99c105d80d6eafd1afc215d99' }
 Plug 'luukvbaal/statuscol.nvim'
 Plug 'julienvincent/hunk.nvim'
-Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v3.8.2' }
@@ -40,11 +39,10 @@ Plug 'kylechui/nvim-surround'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'rachartier/tiny-code-action.nvim'
-Plug 'hedyhli/outline.nvim'
-Plug 'jbyuki/nabla.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'utilyre/barbecue.nvim'
 Plug 'onsails/lspkind.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " Themes
 
@@ -59,6 +57,10 @@ Plug 'navarasu/onedark.nvim'
 Plug 'alexxGmZ/e-ink.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'rockyzhang24/arctic.nvim'
+Plug 'Mofiqul/adwaita.nvim'
+Plug 'projekt0n/github-nvim-theme'
+Plug 'yorumicolors/yorumi.nvim'
+Plug 'brargenzilian/darcula-solid.nvim'
 
 call plug#end()
 
@@ -87,9 +89,7 @@ lua require('plugins/ibl/settings')
 lua require('plugins/lspconfig/settings')
 lua require('plugins/mason/settings')
 lua require('plugins/ministatus/settings')
-lua require('plugins/nabla/settings')
 lua require('plugins/navbuddy/settings')
-lua require('plugins/outline/settings')
 lua require('plugins/render-markdown/settings')
 lua require('plugins/session-manager/settings')
 lua require('plugins/statuscol/settings')
@@ -98,6 +98,7 @@ lua require('plugins/telescope/settings')
 lua require('plugins/tiny-code-action/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
+lua require('plugins/tree/settings')
 
 set nowrap
 set cmdheight=0

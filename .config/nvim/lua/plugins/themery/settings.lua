@@ -1,7 +1,39 @@
 vim.opt.termguicolors = true
 
-require('themery').setup({
+require("themery").setup({
     themes = {
+        {
+            name = "Darcula",
+            colorscheme = "darcula-solid",
+            before = [[
+            ]],
+            after = [[
+            ]]
+        },
+        {
+            name = "Yorumi",
+            colorscheme = "yorumi",
+            before = [[
+            ]],
+            after = [[
+            ]]
+        },
+        {
+            name = "Github",
+            colorscheme = "github_dark_default",
+            before = [[
+            ]],
+            after = [[
+            ]]
+        },
+        {
+            name = "Adwaita",
+            colorscheme = "adwaita",
+            before = [[
+            ]],
+            after = [[
+            ]]
+        },
         {
             name = "Artic",
             colorscheme = "arctic",
@@ -64,7 +96,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "Onedark (Darker)",
+            name = "Onedark",
             colorscheme = "onedark",
             before = [[
                 require('onedark').setup({
@@ -77,7 +109,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "Ayu (Dark)",
+            name = "Ayu",
             colorscheme = "ayu",
             before = [[
                 vim.opt.background = "dark"
@@ -87,7 +119,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "Gruvbox (Dark)",
+            name = "Gruvbox",
             colorscheme = "gruvbox",
             before = [[
                 vim.opt.background = "dark"
@@ -97,7 +129,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "VSCode Dark Plus (Dark)",
+            name = "VSCode Dark Plus",
             colorscheme = "vscode",
             before = [[
                 vim.opt.background = "dark"
@@ -107,7 +139,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "e-ink (Dark)",
+            name = "e-ink",
             colorscheme = "e-ink",
             before = [[
                 vim.opt.background = "dark"
@@ -123,7 +155,15 @@ require('themery').setup({
             ]]
         },
         {
-            name = "e-ink (Light)",
+            name = "Github",
+            colorscheme = "github_light_default",
+            before = [[
+            ]],
+            after = [[
+            ]]
+        },
+        {
+            name = "e-ink",
             colorscheme = "e-ink",
             before = [[
                 vim.opt.background = "light"
@@ -133,7 +173,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "VSCode Dark Plus (Light)",
+            name = "VSCode Dark Plus",
             colorscheme = "vscode",
             before = [[
                 vim.opt.background = "light"
@@ -143,7 +183,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "Ayu (Light)",
+            name = "Ayu",
             colorscheme = "ayu",
             before = [[
                 vim.opt.background = "light"
@@ -153,7 +193,7 @@ require('themery').setup({
             ]]
         },
         {
-            name = "Gruvbox (Light)",
+            name = "Gruvbox",
             colorscheme = "gruvbox",
             before = [[
                 vim.opt.background = "light"

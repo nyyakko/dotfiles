@@ -4,10 +4,10 @@ require('lspconfig.ui.windows').default_options.border = 'rounded'
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-    callback = function(ev)
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    callback = function(args)
+        vim.bo[args.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-        local opts = { silent=true, buffer=ev.buf }
+        local opts = { silent=true, buffer=args.buf }
         local map = vim.keymap.set
 
         map({ 'n' }, 'gi', vim.lsp.buf.implementation, opts)
@@ -21,14 +21,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map({ 'n' }, '<leader>df', function () vim.diagnostic.open_float() end, opts)
         map({ 'n' }, '<leader>tl', function () vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end)
         map({ 'n' }, '<leader>mk', ':Navbuddy<CR>', opts)
+        map({ 'n' }, 'K', function () vim.lsp.buf.hover({ border='rounded', max_width = 100 }) end, opts)
     end
 })
-
-vim.keymap.set({ 'n' }, 'K', function ()
-    if vim.fn.mapcheck('K', 'n') ~= '' then
-        vim.lsp.buf.hover({ border='rounded', max_width = 100 })
-    end
-end)
 
 vim.diagnostic.config({
     underline = true,
