@@ -43,6 +43,8 @@ Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'utilyre/barbecue.nvim'
 Plug 'onsails/lspkind.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'rafikdraoui/jj-diffconflicts'
+Plug 'hat0uma/csvview.nvim'
 
 " Themes
 

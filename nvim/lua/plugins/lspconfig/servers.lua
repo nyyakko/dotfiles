@@ -18,7 +18,6 @@ require('plugins/lspconfig/servers/kotlin_lsp')
 require('plugins/lspconfig/servers/luals')
 require('plugins/lspconfig/servers/marksman')
 require('plugins/lspconfig/servers/quicklintjs')
-require('plugins/lspconfig/servers/svelte')
 require('plugins/lspconfig/servers/tailwindcss')
 require('plugins/lspconfig/servers/ts_ls')
 
