@@ -2,7 +2,7 @@ interval=5
 
 [wireless]
 command=~/.config/i3blocks/scripts/wireless.sh
-label=󰈀
+label=󰖩
 
 [ethernet]
 command=~/.config/i3blocks/scripts/ethernet.sh
