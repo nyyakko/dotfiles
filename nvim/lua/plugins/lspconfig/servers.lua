@@ -20,6 +20,7 @@ require('plugins/lspconfig/servers/marksman')
 require('plugins/lspconfig/servers/quicklintjs')
 require('plugins/lspconfig/servers/tailwindcss')
 require('plugins/lspconfig/servers/ts_ls')
+require('plugins/lspconfig/servers/yamlls')
 
 function SERVERS.configure()
     for _, server in ipairs(SERVERS.registered) do

@@ -32,7 +32,7 @@ Plug 'julienvincent/hunk.nvim'
 Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v3.8.2' }
-Plug 'quick-lint/quick-lint-js', { 'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0' }
+"Plug 'quick-lint/quick-lint-js', { 'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '3.2.0' }
 Plug 'nvim-neotest/nvim-nio'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kylechui/nvim-surround'
@@ -45,6 +45,7 @@ Plug 'onsails/lspkind.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'hat0uma/csvview.nvim'
+Plug 'mfussenegger/nvim-lint'
 
 " Themes
 
@@ -101,6 +102,7 @@ lua require('plugins/tiny-code-action/settings')
 lua require('plugins/treesitter/settings')
 lua require('plugins/ufo/settings')
 lua require('plugins/tree/settings')
+lua require('plugins/nvim-lint/settings')
 
 set nowrap
 set cmdheight=0
