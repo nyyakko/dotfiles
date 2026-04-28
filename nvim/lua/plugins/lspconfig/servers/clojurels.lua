@@ -6,7 +6,7 @@ capabilities.textDocument.foldingRange = {
 }
 
 table.insert(SERVERS.registered, {
-    'svelte', {
+    'clojure_lsp', {
         on_attach = function (client, bufnr)
             if (client.server_capabilities.documentSymbolProvider) then
                 require('nvim-navbuddy').attach(client, bufnr)

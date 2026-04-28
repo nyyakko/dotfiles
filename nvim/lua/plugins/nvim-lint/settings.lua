@@ -9,5 +9,6 @@ vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
 lint.linters_by_ft = {
     cpp = { 'cppcheck' },
     typescriptreact = { 'quick-lint-js' },
-    typescript = { 'quick-lint-js' }
+    typescript = { 'quick-lint-js' },
+    -- python = { 'mypy' }
 }

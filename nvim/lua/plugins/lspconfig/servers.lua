@@ -21,6 +21,8 @@ require('plugins/lspconfig/servers/quicklintjs')
 require('plugins/lspconfig/servers/tailwindcss')
 require('plugins/lspconfig/servers/ts_ls')
 require('plugins/lspconfig/servers/yamlls')
+require('plugins/lspconfig/servers/clojurels')
+require('plugins/lspconfig/servers/terraformls')
 
 function SERVERS.configure()
     for _, server in ipairs(SERVERS.registered) do
