@@ -6,7 +6,7 @@ Plug 'cenk1cenk2/schema-companion.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'master', 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -42,12 +42,12 @@ Plug 'rachartier/tiny-code-action.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'utilyre/barbecue.nvim'
 Plug 'onsails/lspkind.nvim'
-"Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'rafikdraoui/jj-diffconflicts'
 Plug 'hat0uma/csvview.nvim'
 Plug 'mfussenegger/nvim-lint'
-Plug 'esmuellert/codediff.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'saecki/live-rename.nvim'
 
 " Themes
 
@@ -69,43 +69,30 @@ Plug 'brargenzilian/darcula-solid.nvim'
 
 call plug#end()
 
-lua << config
-vim.keymap.set('', '<Space>', '<Nop>', { silent=true })
-
-vim.g.mapleader = ' '
-
-vim.keymap.set('n', '<C-t>l', ':tabnext<CR>', { silent=true })
-vim.keymap.set('n', '<C-t>h', ':tabprev<CR>', { silent=true })
-vim.keymap.set('n', '<C-t>m', ':tabnew<CR>', { silent=true })
-
-vim.keymap.set('n', '<leader>ss', ':split<CR><BAR><C-w>j<CR>', { silent=true })
-vim.keymap.set('n', '<leader>sv', ':vsplit<CR><BAR><C-w>l<CR>',{ silent=true })
-vim.keymap.set('n', '<leader>sq', ':q!<CR>', { silent=true })
-config
+lua require('settings')
 
 lua require('plugins/themery/settings')
 
-lua require('plugins/schema-companion/settings')
 lua require('plugins/alpha/settings')
 lua require('plugins/barbecue/settings')
 lua require('plugins/cmp/settings')
 lua require('plugins/colorizer/settings')
+lua require('plugins/gitsigns/settings')
 lua require('plugins/hunk/settings')
 lua require('plugins/ibl/settings')
 lua require('plugins/lspconfig/settings')
 lua require('plugins/mason/settings')
 lua require('plugins/ministatus/settings')
 lua require('plugins/navbuddy/settings')
+lua require('plugins/nvim-lint/settings')
 lua require('plugins/render-markdown/settings')
 lua require('plugins/session-manager/settings')
 lua require('plugins/statuscol/settings')
 lua require('plugins/surround/settings')
 lua require('plugins/telescope/settings')
 lua require('plugins/tiny-code-action/settings')
-lua require('plugins/treesitter/settings')
-lua require('plugins/ufo/settings')
 lua require('plugins/tree/settings')
-lua require('plugins/nvim-lint/settings')
+lua require('plugins/ufo/settings')
 
 set nowrap
 set cmdheight=0

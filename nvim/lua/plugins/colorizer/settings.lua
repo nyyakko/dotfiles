@@ -1,3 +1,8 @@
 local colorizer = require('colorizer')
 
-colorizer.setup()
+colorizer.setup({
+    'css';
+    'html';
+    'javascript';
+    'typescript';
+})

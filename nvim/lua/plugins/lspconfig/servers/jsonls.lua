@@ -13,6 +13,16 @@ table.insert(SERVERS.registered, {
             end
         end,
         capabilities = capabilities,
+        settings = {
+            json = {
+                schemas = {
+                    {
+                        fileMatch = { 'CMakePresets.json' },
+                        url = 'https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/presets/schema.json'
+                    }
+                }
+            }
+        },
         flags = { debounce_text_changes = 150 },
         single_file_support = true
     }
