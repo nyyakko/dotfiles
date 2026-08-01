@@ -1,15 +1,26 @@
+# [user]
+# name = ""
+# email = ""
+
 [ui]
 editor = "nvim"
-diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
-allow-init-native = true
 default-command = "log"
 
-[merge-tools.diffconflicts]
-program = "nvim"
-merge-args = ["-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right"]
+[merge-tools.diffview]
+conflict-marker-style = "git"
+edit-args = ["-c", "DiffEditor $left $right $output"]
+# edit-args = ["-c", "DiffviewDiffDirs $left $right"]
+merge-args = ["-c", "DiffviewMergeFiles $output $base $left $right"]
 merge-tool-edits-conflict-markers = true
+program = "nvim"
 
-[signing]
-behavior = "own"
-backend = "gpg"
+[merge-tools.diffconflicts]
+conflict-marker-style = "git"
+edit-args = ["-c", "DiffEditor $left $right $output"]
+merge-args = ["-c", "JJDiffConflicts", "$output"]
+merge-tool-edits-conflict-markers = true
+program = "nvim"
 
+# [signing]
+# behavior = "own"
+# backend = "gpg"
