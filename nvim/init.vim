@@ -30,7 +30,6 @@ Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo', { 'commit': 'aa2e676af592b4e99c105d80d6eafd1afc215d99' }
 Plug 'luukvbaal/statuscol.nvim'
 Plug 'julienvincent/hunk.nvim'
-Plug 'saecki/live-rename.nvim'
 Plug 'tpope/vim-abolish'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v3.8.2' }
 Plug 'nvim-neotest/nvim-nio'
@@ -48,6 +47,7 @@ Plug 'hat0uma/csvview.nvim'
 Plug 'mfussenegger/nvim-lint'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'saecki/live-rename.nvim'
+Plug 'dlyongemallo/diffview-plus.nvim'
 
 " Themes
 

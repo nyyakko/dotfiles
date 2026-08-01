@@ -5,12 +5,8 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-local cpus = vim.uv.cpu_info()
-local nthreads = cpus and #cpus or 4
-
 table.insert(SERVERS.registered, {
-    'clangd', {
-        cmd = { 'clangd', '-j=' .. nthreads, '--malloc-trim', '--background-index', '--completion-style=detailed' },
+    'tombi', {
         on_attach = function (client, bufnr)
             if (client.server_capabilities.documentSymbolProvider) then
                 require('nvim-navbuddy').attach(client, bufnr)

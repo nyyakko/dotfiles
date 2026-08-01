@@ -5,8 +5,8 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<C-w>n', ':cnext<CR>', { silent=true })
 vim.keymap.set('n', '<C-w>p', ':cprev<CR>', { silent=true })
 
-vim.keymap.set('n', '<C-t>l', ':tabnext<CR>', { silent=true })
-vim.keymap.set('n', '<C-t>h', ':tabprev<CR>', { silent=true })
+vim.keymap.set('n', '<C-t>n', ':tabnext<CR>', { silent=true })
+vim.keymap.set('n', '<C-t>p', ':tabprev<CR>', { silent=true })
 vim.keymap.set('n', '<C-t>m', ':tabnew<CR>', { silent=true })
 
 vim.keymap.set('n', '<leader>ss', ':split<CR><BAR><C-w>j<CR>', { silent=true })

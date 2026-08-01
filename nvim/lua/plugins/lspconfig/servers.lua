@@ -3,6 +3,7 @@ SERVERS = {
 }
 
 require('plugins/lspconfig/servers/clangd')
+require('plugins/lspconfig/servers/clojurels')
 require('plugins/lspconfig/servers/cmake')
 require('plugins/lspconfig/servers/csharp_ls')
 require('plugins/lspconfig/servers/cssls')
@@ -19,10 +20,10 @@ require('plugins/lspconfig/servers/luals')
 require('plugins/lspconfig/servers/marksman')
 require('plugins/lspconfig/servers/quicklintjs')
 require('plugins/lspconfig/servers/tailwindcss')
+require('plugins/lspconfig/servers/terraformls')
+require('plugins/lspconfig/servers/tombi')
 require('plugins/lspconfig/servers/ts_ls')
 require('plugins/lspconfig/servers/yamlls')
-require('plugins/lspconfig/servers/clojurels')
-require('plugins/lspconfig/servers/terraformls')
 
 function SERVERS.configure()
     for _, server in ipairs(SERVERS.registered) do

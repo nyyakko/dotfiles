@@ -6,7 +6,9 @@ capabilities.textDocument.foldingRange = {
 }
 
 table.insert(SERVERS.registered, {
-    'cmake', {
+    'neocmakelsp', {
+        cmd = { 'neocmakelsp', 'stdio' },
+        filetypes = { 'cmake' },
         on_attach = function (client, bufnr)
             if (client.server_capabilities.documentSymbolProvider) then
                 require('nvim-navbuddy').attach(client, bufnr)
